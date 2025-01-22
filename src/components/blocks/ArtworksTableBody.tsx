@@ -30,6 +30,8 @@ const ArtworksTableBody = ({ data }: { data: ArtworkItem[] }) => {
 
     const cellStyles = 'py-3 truncate text-nowrap max-w-[200px] px-3';
 
+    const badgeStyles = 'px-2 py-1 rounded-4 w-fit text-xs flex items-center';
+
     useEffect(() => {
         window.addEventListener('resize', updateScreenWidth);
 
@@ -99,7 +101,7 @@ const ArtworksTableBody = ({ data }: { data: ArtworkItem[] }) => {
                             </td>
                             <td className={`${cellStyles} max-w-[100px]`}>
                                 {isVisible ? (
-                                    <div className="bg-green/80 text-dark-green px-2 py-1 rounded-4 w-fit text-xs flex items-center">
+                                    <div className={`bg-green/80 text-dark-green ${badgeStyles}`}>
                                         <Eye
                                             size={16}
                                             strokeWidth={1.5}
@@ -108,7 +110,7 @@ const ArtworksTableBody = ({ data }: { data: ArtworkItem[] }) => {
                                         Visible
                                     </div>
                                 ) : (
-                                    <div className="bg-dark-gray text-gray-800 px-2 py-1 rounded-4 w-fit text-xs flex items-center">
+                                    <div className={`bg-dark-gray text-gray-800 ${badgeStyles}`}>
                                         <EyeOff
                                             size={16}
                                             strokeWidth={1.5}
@@ -123,12 +125,14 @@ const ArtworksTableBody = ({ data }: { data: ArtworkItem[] }) => {
                             </td>
                             <td className={`${cellStyles} max-w-20`}>
                                 {documents_number ? (
-                                    <div className="bg-light-blue/50 text-dark-indigo px-2 py-1 rounded-4 w-fit flex items-center text-xs">
+                                    <div
+                                        className={`bg-light-blue/50 text-dark-indigo ${badgeStyles}`}
+                                    >
                                         <File size={16} className="inline-block mr-1" />
                                         <span>{documents_number}</span>
                                     </div>
                                 ) : (
-                                    <div className="bg-background text-accent px-2 py-1 rounded-4 w-fit flex items-center text-xs">
+                                    <div className={`bg-background text-accent ${badgeStyles}`}>
                                         <span>No Docs</span>
                                     </div>
                                 )}
