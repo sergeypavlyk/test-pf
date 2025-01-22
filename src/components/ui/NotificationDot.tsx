@@ -1,5 +1,3 @@
-const NotificationDot = () => (
-  <div className="ml-2 rounded-full w-3 h-3 bg-blue-500 inline-block" />
-);
+const NotificationDot = () => <div className="ml-2 rounded-full w-2 h-2 bg-indigo inline-block" />;
 
 export default NotificationDot;
